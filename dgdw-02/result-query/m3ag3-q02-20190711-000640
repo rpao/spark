@@ -1,0 +1,6 @@
+MongoDB shell version v4.0.10
+connecting to: mongodb://127.0.0.1:27017/m3ag3?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("b01f306b-32ea-4f41-9c37-aa2681d45b08") }
+MongoDB server version: 4.0.10
+2019-07-11T00:06:40.864-0300 E -        [main] file [m3ag3/q02.js] doesn't exist
+failed to load: m3ag3/q02.js
