@@ -1,0 +1,4 @@
+master:local
+IP:127.0.0.1
+dataBase:m3bg1
+collections:c_address,city,customer,date,lineorder,nation,part,region,s_address,supplier

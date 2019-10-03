@@ -1,0 +1,66 @@
+class ConfBD:
+    def __init__(self):
+        fConf = open("conf/confbd_m3bg1.txt", "r")
+
+        conf = []
+        for line in fConf:
+            conf.append(line.replace('\n','').split(':')[1])
+        fConf.close()
+
+        self.bdMaster = conf[0]
+        self.ip = conf[1]
+        self.database = conf[2]
+        
+        try:
+            self.collections = conf[3].split(',')
+        except:
+            self.collections = None
+        
+    def getMaster(self):
+        return  self.bdMaster
+    
+    def getConnector(self):
+        return self.connector
+    
+    def getIP(self):
+        return self.ip
+    
+    def getDatabase(self):
+        return self.database
+    
+    def getCollections(self):
+        return self.collections
+    
+    def print(self):
+        print("BD - Configuration")
+        print('  master:',self.bdMaster)
+        print('  ip:',self.ip)
+        print('  database:',self.database)
+        
+        if(self.collections == None):
+            print('  collections: not-defined')
+        else:
+            print('  collections:',self.collections)
+        
+        print('-------------------------------------------------------------------------------------------------------------------------------')
+
+def newSparkSession(collectionName):
+    ## once defined the SparkSession configurations, no change can be done!
+    ## for each collection, a new SparkSession needs to be created.
+    
+    url = "mongodb://{0}/{1}.{2}".format(IP, DATABASE, collectionName)
+
+    sparkSession = SparkSession\
+                .builder\
+                .appName(MASTER+'_'+DATABASE)\
+                .config("spark.mongodb.input.uri",url)\
+                .config("spark.mongodb.output.uri",url)\
+                .getOrCreate()
+    
+    return sparkSession
+
+## creating spark sql context to access mongo database on collection 'c_address'
+##sparkSession = newSparkSession('c_address')
+
+##sqlContext = SQLContext(sparkSession)
+## sqlContext.getConf(key="spark.mongodb.input.uri")

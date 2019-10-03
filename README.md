@@ -5,3 +5,6 @@ Comando para executar o pyspark utilizano o jar do mongoDb connector:
 	
 Comando para executar o pyspark utilizano o jar do MySQL connector:	
 	pyspark --jars "material\mysql-connector-java-8.0.15\mysql-connector-java-8.0.15.jar"
+
+Comando para executar o pyspark utilizano o jar do PostgreSQL connector:	
+	pyspark --jars "/material/psql-connector-java-42.2.8/postgresql-42.2.8.jar"

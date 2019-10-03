@@ -1,0 +1,1 @@
+1 - https://forums.databricks.com/questions/9223/query-a-mongodb-collection-using-pyspark.html

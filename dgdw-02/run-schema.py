@@ -4,7 +4,7 @@
 import os
 from datetime import datetime
 
-database = ["m3ag3"]
+database = ["m3bg1"]
 queries = ["q01","q02","q03", "q04","q05","q06"] # .js extension
 NUM_EXEC = 5
 SUBDIR = ""
